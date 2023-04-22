@@ -145,12 +145,10 @@ class _ProductScreenState extends State<ProductScreen> {
                                                       productName[index]
                                                           .toString(),
                                                   initialPrice:
-                                                      productPrice[index]
-                                                          .toString(),
+                                                      productPrice[index],
                                                   productPrice:
-                                                      productPrice[index]
-                                                          .toString(),
-                                                  quantity: 1.toString(),
+                                                      productPrice[index],
+                                                  quantity: 1,
                                                   unitTag: ProductUnit[index]
                                                       .toString(),
                                                   image: productImage[index]

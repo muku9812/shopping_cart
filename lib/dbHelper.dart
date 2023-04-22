@@ -9,15 +9,16 @@ class DBHelper {
 
   Future<Database?> get db async {
     if (_db != null) {
+      print("hot");
       return _db!;
     }
-
+    print("object");
     _db = await initDatabase();
   }
 
   initDatabase() async {
     io.Directory documentDirectory = await getApplicationDocumentsDirectory();
-    String path = join(documentDirectory.path, 'card.db');
+    String path = join(documentDirectory.path, 'car.db');
     var db = await openDatabase(path, version: 1, onCreate: _onCreate);
     return db;
   }

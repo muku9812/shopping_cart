@@ -42,7 +42,7 @@ class _CartScreenState extends State<CartScreen> {
         ],
       ),
       body: Column(children: [
-        FutureBuilder(
+        FutureBuilder<List<Cart>>(
             future: cart.getData(),
             builder: (context, AsyncSnapshot<List<Cart>> snapshot) {
               if (snapshot.hasData) {
@@ -134,6 +134,9 @@ class _CartScreenState extends State<CartScreen> {
                         );
                       }),
                 );
+              }
+              if (snapshot.hasError) {
+                return Text(snapshot.error.toString());
               }
               return const Text(' no data');
             })
